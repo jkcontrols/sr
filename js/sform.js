@@ -10,7 +10,7 @@ form.addEventListener('submit', e=> {
     fetch(scriptURL, { method:'POST', body: new FormData(form)})
     .then(response => alert("Thank you Form Submitted"))
     // .then(() => { window.location.reload(); })
-    .then(() => { window.location.href='../index.html'})
+    .then(() => { window.location.href='..https://jkcontrols.github.io/sr/index.html'})
     .catch(error => console.error('Error!', error.message))
 })
 
