@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Entry Form</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="index">
+    <div class="main-wrapper">
+        <form method ="post" action="" class="form" name="form" autocomplete="off">
+            
+            <h3>Service Entry Form</h3>
+            <p>Please Fill the Following form</p>
+            <div class="input-flex">
+                <div>
+                    <label for="jobno" class="form-lable">Job No</label>
+                    <input type="text" name="jobno" id="jobno" placeholder="Enter Job No" class="form-input" required>
+                </div>
+                <div>
+                    <label for="indate" class="form-lable">Date</label>
+                    <input type="date" name="indate" id="indate" placeholder="Enter Job In Date" class="form-input" required>
+                </div>
+                <div>
+                    <label for="cusname" class="form-lable">Company Name</label>
+                    <input type="text" name="cusname" id="cusname" placeholder="Enter Company Name" class="form-input" required>
+                </div>
+                <div>
+                    <label for="model" class="form-lable">Model Number</label>
+                    <input type="text" name="model" id="model" placeholder="Enter Model No" class="form-input"required>
+                </div>
+                <div>
+                    <label for="serial-no" class="form-lable">Serial Number</label>
+                    <input type="text" name="serial-no" id="serial-no" placeholder="Enter serial number" class="form-input"required>
+                </div>
+
+
+            </div>
+            <div class="input-flex">
+                <div>
+                    <label for="in-dc-no" class="form-lable">IN DC No</label>
+                    <input type="text" name="in-dc-no" id="in-dc-no" placeholder="Enter Customer DC No" class="form-input">
+                </div>
+                <div>
+                    <label for="in-dc-date" class="form-lable">IN DC Date</label>
+                    <input type="date" name="in-dc-date" id="in-dc-date" placeholder="Enter Customer DC Date" class="form-input"required>
+                </div>
+                <div>
+                    <label for="pur-date" class="form-lable">Purchase Date</label>
+                    <input type="date" name="pur-date" id="pur-date" placeholder="Enter Purchase Date" class="form-input"required>
+                </div>
+                <div>
+                    <label for="sold-date" class="form-lable">Sold Date</label>
+                    <input type="date" name="sold-date" id="sold-date" placeholder="Enter Selling Date" class="form-input"required>
+                </div>
+                <div>
+                    <label for="warranty" class="form-lable">Warranty Status</label>
+                    <select name="warranty" id="warranty" class="form-input">
+                        <option value="select">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="input-flex">
+                <div>
+                    <label for="problem" class="form-lable">Problem</label>
+                    <input type="text" name="problem" id="problem" placeholder="Enter the Problem" class="form-input"required>
+                </div>
+                <div>
+                    <label for="remarks" class="form-lable">Remarks</label>
+                    <input type="text" name="remarks" id="remarks" placeholder="Enter If any Points" class="form-input"required>
+                </div>
+            </div>
+            <button class="btn" id="submit" value="submit">Submit</button>
+        </form>
+    </div>
+    <!-- <div class="table-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Job No</th>
+                    <th>Material In Date</th>
+                    <th>Material In DC No</th>
+                    <th>Company Name</th>
+                </tr>
+        </thead>
+            <tbody id="table-data">
+                
+            </tbody>
+        </table>
+    </div> -->
+</body>
+<script src="/js/sform.js"></script>
+</html>

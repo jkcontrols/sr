@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Service Datas!</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    
+
+    <h1 class="testh1"> Service Datas </h1>
+    <p></p>
+    <button class="addBtn" onclick="window.location.href='/html/form.html';"> Add Jobs </button>
+    <p></p>
+    <table class="output" ></table>
+      <p id="currentTime"></p>
+      <script>
+        
+        // URL of the Google Spreadsheet (in JSON format)
+        const url = 'https://docs.google.com/spreadsheets/d/1jzbGRnX9L62tv1wtW-qozQMzJJyz5UohDTOwz1AOgC8/gviz/tq?';
+        const output = document.querySelector('.output');
+        
+
+        // Fetch the spreadsheet data
+        fetch(url)
+        .then(res => res.text())
+        .then(rep => {
+                   
+          // Parse the response JSON data
+          const data = JSON.parse(rep.substr(47).slice(0, -2));
+          
+          // Create the table row for the headers
+          const row = document.createElement('tr');
+          output.append(row);
+        
+          // Loop through columns and create heading cells
+          data.table.cols.forEach((heading) => {
+            const cell = document.createElement('th');  // Use <th> for headings
+            cell.textContent = heading.label;  // Access 'label' for each column's heading
+            row.append(cell);
+          });
+        
+          // Loop through each row of data
+          data.table.rows.forEach((main) => {
+            const container = document.createElement('tr');
+            output.append(container);
+        
+            // Loop through the row cells
+            main.c.forEach((ele) => {
+              const cell = document.createElement('td');
+              //cell.textContent = ele.v;  // Access value 'v' for each cell's data
+              if (ele.f) {
+                cell.textContent = ele.f;  // Use formatted value for dates and other formatted data
+              } else {
+                cell.textContent = ele.v;  // Use raw value (ele.v) for other data
+               }
+              container.append(cell);
+            });
+          });
+        
+          console.log(data);  // Log the data for debugging
+        });
+        </script>
+        
+  </body>
+</html>
