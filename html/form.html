@@ -94,5 +94,21 @@
         </table>
     </div> -->
 </body>
-<script src="https://jkcontrols.github.io/sr/js/sform.js"></script>
+<script ">
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzZouYODRadM9DpeHE4xC5OB34cqW0pD6obOtWieZGbcgWiZRFk-Yj2c05ipUsNDFQPQw/exec"
+
+
+const form  = document.forms['form']
+const tabledata = document.getElementById('table-data');
+
+console.log("form") 
+form.addEventListener('submit', e=> {
+    e.preventDefault()
+    fetch(scriptURL, { method:'POST', body: new FormData(form)})
+    .then(response => alert("Thank you Form Submitted"))
+    // .then(() => { window.location.reload(); })
+    .then(() => { window.location.href='..https://jkcontrols.github.io/sr/'})
+    .catch(error => console.error('Error!', error.message))
+})
+</script>
 </html>
